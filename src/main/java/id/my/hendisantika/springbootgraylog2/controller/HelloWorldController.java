@@ -33,4 +33,14 @@ public class HelloWorldController {
         demoService.hello();
         return map;
     }
+
+    @GetMapping("log")
+    public String log() {
+        log.error("error");
+        log.warn("warn");
+        log.info("info");
+        log.debug("debug");
+        int i = 1 / 0;
+        return "success";
+    }
 }
