@@ -1,0 +1,7 @@
+spring.application.name: spring-boot-graylog2
+server:
+  port: 8080
+groylog:
+  ip: 127.0.0.1
+  port: 12201
+  maximumMessageSize: 8192
