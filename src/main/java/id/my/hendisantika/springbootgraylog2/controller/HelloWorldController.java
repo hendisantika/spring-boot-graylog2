@@ -3,7 +3,11 @@ package id.my.hendisantika.springbootgraylog2.controller;
 import id.my.hendisantika.springbootgraylog2.service.DemoService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -16,9 +20,17 @@ import org.springframework.stereotype.Controller;
  * To change this template use File | Settings | File Templates.
  */
 @Slf4j
-@Controller
+@RestController
 @RequiredArgsConstructor
 public class HelloWorldController {
     private final DemoService demoService;
 
+    @GetMapping("/hello")
+    public Map<String, Object> showHelloWorld() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("msg", "HelloWorld");
+        log.info("my name is HelloWorldController");
+        demoService.hello();
+        return map;
+    }
 }
