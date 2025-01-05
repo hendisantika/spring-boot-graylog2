@@ -34,7 +34,7 @@ public class HelloWorldController {
         return map;
     }
 
-    @GetMapping("log")
+    @GetMapping("/log")
     public String log() {
         log.error("error");
         log.warn("warn");
