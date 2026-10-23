@@ -13,7 +13,7 @@ services:
       - "mongodb_config:/data/configdb"
   #Graylog Data Node: https://hub.docker.com/r/graylog/graylog-datanode
   datanode:
-    image: "graylog/graylog-datanode:6.1"
+    image: "graylog/graylog-datanode:7.2"
     hostname: "datanode"
     environment:
       GRAYLOG_DATANODE_NODE_ID_FILE: "/var/lib/graylog-datanode/node-id"
